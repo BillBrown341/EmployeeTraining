@@ -1,56 +1,54 @@
-import type {ReactNode} from 'react';
+import type {ReactNode, CSSProperties } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  path:string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Build Driver',
+    // path:"../../../docs/Build_Driver/00_Introduction",
+    path:"/docs/Build_Driver",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Build your first driver!
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Build OSH-Node',
+    // path:"../../../docs/Build_OSH_Node",
+    path:"/docs/Build_OSH_Node",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Build your first OSH-Node
       </>
     ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
+  }
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, path, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+        <Link to={`${path}/Introduction`} >
+          <button className={clsx(
+            'button',
+            'button--lg',
+            'button--outline',
+            'button--secondary'
+          )}>
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </button>
+        </Link>
+
       </div>
     </div>
   );

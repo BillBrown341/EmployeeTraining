@@ -8,8 +8,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Employee Training',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  tagline: 'Employee Training',
+  favicon: 'img/OSH-Logo-NoText.png',
 
   // Set the production url of your site here
   url: 'https://github.com:',
@@ -72,22 +72,21 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'OpenSensorHub',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'OSH Logo',
+        src: 'img/OSH-Logo-NoText.png',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'mySideBar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Employee Training',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://github.com/opensensorhub',
+          label: 'OpenSensorHub',
           position: 'right',
         },
       ],
